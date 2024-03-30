@@ -21,6 +21,7 @@ in
         ublock-origin
       ];
       settings = {
+        "browser.startup.page" = 3;
         "extensions.activeThemeID" = "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}";
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
         "extensions.pocket.enabled" = lock-false;

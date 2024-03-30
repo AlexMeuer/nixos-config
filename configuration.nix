@@ -66,11 +66,11 @@
     enable = true;
     settings = {
       initial_session = {
-        command = "Hyprland";
+        command = "${pkgs.hyprland}/bin/Hyprland";
         user = "alex";
       };
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Access is restricted to authorized personnel only.' --asterisks --remember --remember-user-session --time --cmd Hyprland";
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --greeting 'Access is restricted to authorized personnel only.' --asterisks --time --cmd ${pkgs.hyprland}/bin/Hyprland";
         user = "alex";
       };
     };
