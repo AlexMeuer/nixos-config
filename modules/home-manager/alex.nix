@@ -21,6 +21,7 @@
   # ];
   imports = [
     ./fish.nix
+    ./git.nix
     ./firefox.nix
   ];
 
@@ -80,14 +81,6 @@
   xdg.portal.config.common.default = "*";
 
   programs = {
-    git = {
-      enable = true;
-      userName = "alexmeuer";
-      userEmail = "alex@alexmeuer.com";
-    };
-    lazygit = {
-      enable = true;
-    };
     kitty = {
       enable = true;
       theme = "Gruvbox Material Dark Medium";
