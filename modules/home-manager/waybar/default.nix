@@ -21,9 +21,9 @@
         ];
 
         "hyperland/workspaces" = {
-          persistent-workspaces = 6;
+          persistent-workspaces = { "*" = 6; };
           show-special = true;
-          format = "<sub<{icon}</sub>{windows}";
+          format = "<sub>{icon}</sub>{windows}";
           window-rewrite-default = "";
           window-rewrite = {
             "title<.*youtube.*>" = "󰗃";
