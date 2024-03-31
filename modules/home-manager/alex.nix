@@ -71,6 +71,11 @@
     hyprshot
     hyprpicker
 
+    deluge
+
+    protonvpn-gui
+    protonvpn-cli
+
     spotify
     discord
     vesktop # Required for screensharing with audio on wayland. Run it with 'vesktop' command.

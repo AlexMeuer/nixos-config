@@ -19,6 +19,7 @@ in
         darkreader
         gruvbox-dark-theme
         ublock-origin
+	proton-vpn
       ];
       settings = {
         "browser.startup.page" = 3;
