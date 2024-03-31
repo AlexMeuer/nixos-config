@@ -156,7 +156,10 @@
       fi
     '';
   };
-  programs.thunar.enable = true;
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+  };
   programs.steam = {
     enable = true;
     gamescopeSession = {
@@ -177,6 +180,9 @@
   # };
 
   # List services that you want to enable:
+
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
