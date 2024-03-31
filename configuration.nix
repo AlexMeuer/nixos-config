@@ -144,6 +144,7 @@
   #  wget
     libnotify
     linuxKernel.packages.linux_5_15.nvidia_x11_vulkan_beta_open
+    ntfs3g
   ];
 
   programs.bash = {
