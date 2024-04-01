@@ -5,16 +5,31 @@
 @define-color mpd #fbf1c7;
 @define-color pipe #7d818a;
 
+/* Gruvbox Material Medium Base16 colors */
+@define-color base00 #292828; /* bg */
+@define-color base01 #32302f; /* bg2 */
+@define-color base02 #504945; /* bg6 */
+@define-color base03 #665c54; /* bg8 */
+@define-color base04 #bdae93; /* p-fg3 */
+@define-color base05 #ddc7a1; /* fg */
+@define-color base06 #ebdbb2; /* p-fg1 */
+@define-color base07 #fbf1c7; /* p-fg0 */
+@define-color base08 #ea6962; /* red */
+@define-color base09 #e78a4e; /* orange */
+@define-color base0A #d8a657; /* yellow */
+@define-color base0B #a9b665; /* green */
+@define-color base0C #89b482; /* aqua/cyan */
+@define-color base0D #7daea3; /* blue */
+@define-color base0E #d3869b; /* purple */
+@define-color base0F #bd6f3e; /* dim-orange */
+
 window#waybar {
-  /* background-color: rgba(0x11,0x11, 0x12, 0.6); */
-  /* background-color: #4c566a; */
-  background-color: #0b0c0d;
+  background-color: @base00;
 }
 * {
   min-height: 0px;
-  font-size: 11px;
+  font-size: 12px;
   font-family: Hack Nerd Font Mono;
-  min-height: 0px;
   font-weight: 600;
   padding-bottom: 1px;
   padding-top: 1px;
@@ -24,13 +39,12 @@ window#waybar {
     padding-left: 10px;
     padding-right: 10px;
 }
-/* center module */
 #clock {
   margin: 2px 0px 2px 0px;
-  color: #a2bab1;
+  color: @base0D;
   padding-left: 8px;
   padding-right: 8px;
-  background-color: @bg1;
+  background-color: @base02;
   border-radius: 8px;
 }
 
@@ -43,101 +57,92 @@ window#waybar {
 #cpu,
 #backlight,
 #battery {
-  color: @font;
+  color: @base05;
   margin: 2px 0px 2px 0px;
   padding: 0px 8px 0px 8px;
-  background-color: @bg1;
+  background-color: @base02;
   padding-top: 2px;
   padding-bottom: 2px;
 }
 #tray,
 #custom-power {
-  color: @font;
+  color: @base05;
   margin: 2px 0px 2px 0px;
   padding: 0px 2px 0px 2px;
-  background-color: @bg1;
+  background-color: @base01;
   color: #bf616a;
   padding-top: 2px;
   padding-bottom: 2px;
 }
 
 #workspaces {
-  margin: 2px 2px 2px 2px;
-  padding: 0px 2px 0px 6px;
-  border-radius: 6px;
-  background-color: @bg1;
+  margin: 0px 4px 0px 4px;
 }
 
 #workspaces button {
-  background: @bg1;
-  color: @font;
-  margin: 2px 3px 2px 3px;
-  padding: 0px;
+  background: @base01;
+  color: @base0A;
+  margin: 0px 2px 0px 2px;
+  padding: 0px 4px 0px 4px;
 }
 
-#workspaces button.focused {
-  /* color: @ws-clr; */
-  /* background: @ws_foc; */
-  border-width: 2px;
-  border-color: #cc241d;
-  color: #ffd77a;
-  background-color: #504945;
-  border-radius: 3px;
-  border-style: none none outset none;
+#workspaces button.empty {
+  background: @base00;
+}
+
+#workspaces button.visible {
+  color: @base09;
+  background-color: @base01;
 }
 
 #workspaces button.urgent {
+  color: @base08;
+  background-color: @base04
 }
 
 #custom-left_pad {
   border-radius: 8px 0px 0px 8px;
   padding: 0px 2px 0px 2px;
   margin: 2px 0px 2px 2px;
-  background-color: @bg1;
+  background-color: @base01;
 }
 
 #custom-right_pad {
   border-radius: 0px 8px 8px 0px;
   padding: 0px 2px 0px 2px;
   margin: 2px 2px 2px 0px;
-  background-color: @bg1;
+  background-color: @base01;
 }
 #custom-pipe {
   margin-top: 2px;
   margin-bottom: 2px;
   font-size: 16px;
-  background-color: @bg1;
-  color: @pipe;
+  background-color: @base01;
+  color: @base03;
 }
 
 #mpd {
-  color: @mpd;
+  color: @base0E;
 }
 #pulseaudio {
-  color: #fb4934;
-}
-#bluetooth {
-  color: #fe8019;
+  color: @base0E;
 }
 #network {
-  color: #fabd2f;
+  color: @base0C;
 }
 #disk {
-  color: #ebdbb2;
+  color: @base0E;
 }
 #memory {
-  color: #b8bb26;
+  color: @base0B;
 }
 #cpu {
-  color: #8ec07c;
-}
-#backlight {
-  color: #83a598;
+  color: @base09;
 }
 #battery {
-  color: #d3869b;
+  color: @base0C;
 }
 #custom-power {
-  color: #fb4934;
+  color: @base08;
 }
 

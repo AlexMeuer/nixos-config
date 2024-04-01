@@ -5,13 +5,11 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 32;
         modules-left = [ "hyprland/workspaces" ];
-        modules-center = [ "hyperland/window" ];
+        modules-center = [ "hyprland/window" ];
         modules-right = [
           "mpd"
-          "mpris"
-          "temperature"
           "disk"
           "memory"
           "cpu"
@@ -20,17 +18,21 @@
           "clock"
         ];
 
-        "hyperland/workspaces" = {
+       "hyprland/workspaces" = {
           persistent-workspaces = { "*" = 6; };
           show-special = true;
-          format = "<sub>{icon}</sub>{windows}";
-          window-rewrite-default = "";
+          format = ''{icon} <span font="12" rise="-8">{windows}</span>'';
+          window-rewrite-default = "";
           window-rewrite = {
             "title<.*youtube.*>" = "󰗃";
             "class<firefox>" = "";
             "class<firefox> title<.*github.*>" = "";
-            "fish.*" = "";
-            "nvim.*" = "";
+            "fish" = "";
+            "class<kitty>" = "";
+            "class<kitty> title<nvim.*>" = "";
+	    "spotify" = "󰓇";
+	    "steam" = "󰓓";
+	    "discord" = "󰙯";
           };
         };
       };
