@@ -55,6 +55,7 @@
     networkmanagerapplet
 
     neofetch
+    bat
     lolcat
     tree
     fishPlugins.colored-man-pages
@@ -79,6 +80,7 @@
     spotify
     discord
     vesktop # Required for screensharing with audio on wayland. Run it with 'vesktop' command.
+    obsidian
   ];
 
   xdg.configFile."hypr/hyprland.conf".source = ./hypr/hyprland.conf;
