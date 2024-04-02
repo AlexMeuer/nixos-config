@@ -190,6 +190,28 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+
+  services.syncthing = {
+    # https://nixos.wiki/wiki/Syncthing
+    enable = true;
+    user = "alex";
+    dataDir = "/home/alex/Documents";
+    configDir = "/home/alex/.config/syncthing";
+    overrideDevices = false;
+    overrideFolders = false;
+    settings = {
+      #devices = {
+      #  "Phone" = { id = "SRE44RO-PTG2K6Y-ZLBAMPP-QXZS62D-5B0D4C5-MQOZBU5-PUB2LMJ-I5U5IQT"; };
+      #};
+      #folders = {
+      #  "Obsidian" = {                     # Name of folder in Syncthing, also the folder ID
+      #    path = "/home/alex/repos/notes"; # Which folder to add to Syncthing
+      #    devices = [ "Phone" ];           # Which devices to share the folder with
+      #  };
+      #};
+    };
+  };
+
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
