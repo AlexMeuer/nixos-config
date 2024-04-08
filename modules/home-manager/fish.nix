@@ -30,6 +30,9 @@
         };
       }
     ];
+    interactiveShellInit = ''
+set -gx GPG_TTY (tty)
+'';
     functions = {
       fish_greeting = ''echo "Let's fish!" | ${pkgs.lolcat}/bin/lolcat'';
       fish_prompt = ''set -l last_pipestatus $pipestatus
