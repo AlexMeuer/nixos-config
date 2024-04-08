@@ -48,6 +48,8 @@
 
     networkmanagerapplet
 
+    gruvbox-gtk-theme
+
     neofetch
     bat
     lolcat

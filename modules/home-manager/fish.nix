@@ -4,6 +4,7 @@
     enable = true;
     shellAbbrs = {
       gitl = "lazygit";
+      gits = "git status";
       amend = "git commit --amend";
     };
     shellAliases = {
