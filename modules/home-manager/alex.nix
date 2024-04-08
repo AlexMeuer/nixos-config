@@ -24,6 +24,8 @@
     ./git.nix
     ./firefox.nix
     ./waybar
+    ./spotify.nix
+    ./discord
   ];
 
   # colorScheme = nix-colors.colorSchemes.gruvbox;
@@ -69,9 +71,6 @@
     protonvpn-gui
     protonvpn-cli
 
-    spotify
-    discord
-    vesktop # Required for screensharing with audio on wayland. Run it with 'vesktop' command.
     obsidian
   ];
 
