@@ -79,22 +79,8 @@
     };
   };
 
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  # Enable the KDE Plasma Desktop Environment.
-  # services.xserver.displayManager.sddm.enable = true;
-  # services.xserver.desktopManager.plasma5.enable = true;
-
-  # Configure keymap in X11
-  # services.xserver = {
-  #   layout = "gb";
-  #   xkbVariant = "";
-  # };
-
   # Configure console keymap
-  console.keyMap = "uk";
+  console.keyMap = "ie";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -127,15 +113,12 @@
   };
 
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
       "alex" = import ./modules/home-manager/alex.nix;
     };
   };
-
-  # Enable automatic login for the user.
-  # services.xserver.displayManager.autoLogin.enable = true;
-  # services.xserver.displayManager.autoLogin.user = "alex";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -148,48 +131,44 @@
     libnotify
     linuxKernel.packages.linux_5_15.nvidia_x11_vulkan_beta_open
     ntfs3g
+    pinentry
   ];
 
-  programs.bash = {
+  programs = {
+    bash = {
   interactiveShellInit = ''
-      if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
-      then
-        shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
-        exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
-      fi
-    '';
-  };
-  programs.thunar = {
-    enable = true;
-    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
-  };
-  programs.steam = {
-    enable = true;
-    gamescopeSession = {
+if [[ $(${pkgs.procps}/bin/ps --no-header --pid=$PPID --format=comm) != "fish" && -z ''${BASH_EXECUTION_STRING} ]]
+then
+  shopt -q login_shell && LOGIN_OPTION='--login' || LOGIN_OPTION=""
+  exec ${pkgs.fish}/bin/fish $LOGIN_OPTION
+fi
+'';
+    };
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+    };
+    gnupg.agent = {
       enable = true;
     };
-    localNetworkGameTransfers.openFirewall = true;
-    remotePlay.openFirewall = true;
-    extraCompatPackages = [ pkgs.proton-ge-bin ];
+    steam = {
+      enable = true;
+      gamescopeSession = {
+        enable = true;
+      };
+      localNetworkGameTransfers.openFirewall = true;
+      remotePlay.openFirewall = true;
+      extraCompatPackages = [ pkgs.proton-ge-bin ];
+    };
   };
   hardware.steam-hardware.enable = true;
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
   # List services that you want to enable:
-
   services.gvfs.enable = true;
   services.udisks2.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
 
   services.syncthing = {
     # https://nixos.wiki/wiki/Syncthing

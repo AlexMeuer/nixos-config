@@ -9,50 +9,56 @@ let
     Status = "locked";
   };
 in
-{
+{ 
   programs.firefox = {
     enable = true;
     package = pkgs.firefox-wayland;
     profiles.alex = {
       extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        gruvbox-dark-theme
         vimium
         darkreader
         gruvbox-dark-theme
         ublock-origin
 	proton-vpn
+	privacy-badger
+	# onepassword-password-manager
       ];
       settings = {
         "browser.startup.page" = 3;
-        "extensions.activeThemeID" = "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}";
         "browser.contentblocking.category" = { Value = "strict"; Status = "locked"; };
-        "extensions.pocket.enabled" = lock-false;
-        "browser.topsites.contile.enabled" = lock-false;
-        "browser.search.suggest.enabled.private" = lock-false;
-        "browser.newtabpage.activity-stream.feeds.section.topstories" = lock-false;
-        "browser.newtabpage.activity-stream.feeds.snippets" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includePocket" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = lock-false;
-        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = lock-false;
-        "browser.newtabpage.activity-stream.showSponsored" = lock-false;
-        "browser.newtabpage.activity-stream.system.showSponsored" = lock-false;
-        "browser.newtabpage.activity-stream.showSponsoredTopSites" = lock-false;
+        "browser.topsites.contile.enabled" = false;
+        "browser.search.suggest.enabled.private" = false;
+        "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+        "browser.newtabpage.activity-stream.feeds.snippets" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includePocket" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeBookmarks" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeDownloads" = false;
+        "browser.newtabpage.activity-stream.section.highlights.includeVisited" = false;
+        "browser.newtabpage.activity-stream.showSponsored" = false;
+        "browser.newtabpage.activity-stream.system.showSponsored" = false;
+        "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
+        "extensions.pocket.enabled" = false;
+	"intl.regional_prefs.use_os_locales" = true;
       };
     };
     /* ---- POLICIES ---- */
     # Check about:policies#documentation for options.
     policies = {
+      DisableMasterPasswordCreation = true;
+      DisablePasswordReveal = true;
+      DisablePocket = true;
       DisableTelemetry = true;
       DisableFirefoxStudies = true;
-      DisablePocket = true;
       DisableFirefoxAccounts = true;
-      DisableAccounts = true;
       EnableTrackingProtection = {
         Value = true;
         Locked = true;
         Cryptomining = true;
         Fingerprinting = true;
+	EmailTracking = true;
       };
+      PasswordManagerEnabled = false;
     };
   };
 }

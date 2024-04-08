@@ -1,6 +1,16 @@
 { pkgs, inputs, ... }: {
+  home.packages = [ pkgs.lolcat ];
   programs.fish = {
     enable = true;
+    shellAbbrs = {
+      gitl = "lazygit";
+      amend = "git commit --amend";
+    };
+    shellAliases = {
+      gita = "git add --all";
+      gitac = "gita; and git commit";
+      gitacp = "gitac; and git push";
+    };
     plugins = [
       {
         name = "grc";
