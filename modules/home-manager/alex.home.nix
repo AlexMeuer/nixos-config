@@ -47,9 +47,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-
-    gruvbox-gtk-theme
-
     vlc
     mpv
 
@@ -100,6 +97,14 @@
 
   services = {
     network-manager-applet.enable = true;
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      package = pkgs.gruvbox-gtk-theme;
+      name = "Gruvbox-Dark-BL";
+    };
   };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
