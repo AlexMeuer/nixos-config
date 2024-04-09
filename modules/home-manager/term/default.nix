@@ -19,12 +19,12 @@
 
     atuin = {
       enable = true;
-      enableFishIntegration = programs.fish.enable;
+      enableFishIntegration = true;
     };
 
     thefuck = {
       enable = true;
-      enableFishIntegration = programs.fish.enable;
+      enableFishIntegration = true;
     };
 
   };

@@ -116,7 +116,7 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "alex" = import ./modules/home-manager/alex.nix;
+      "alex" = import ./modules/home-manager/alex.home.nix;
     };
   };
 

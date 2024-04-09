@@ -4,8 +4,8 @@
       enable = true;
       # theme = "Gruvbox Material Dark Medium";
       font.name = "Hack Nerd Font Mono";
-      font.size = 14;
-      shellIntegration.enableFishIntegration = programs.fish.enable;
+      # font.size = 14;
+      shellIntegration.enableFishIntegration = true;
       darwinLaunchOptions = [
         "--single-instance"
         "--directory ~"
