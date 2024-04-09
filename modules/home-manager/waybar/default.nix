@@ -9,7 +9,6 @@
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "hyprland/window" ];
         modules-right = [
-          "mpd"
           "disk"
           "memory"
           "cpu"

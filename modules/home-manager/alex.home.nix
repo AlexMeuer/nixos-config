@@ -27,6 +27,7 @@
     ./music
     ./discord
     ./mako.nix
+    ./launcher.nix
   ];
 
   # colorScheme = nix-colors.colorSchemes.gruvbox;
@@ -46,8 +47,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-
-    networkmanagerapplet
 
     gruvbox-gtk-theme
 
@@ -88,22 +87,20 @@
       withPython3 = true;
       withNodeJs = true;
     };
-    rofi = {
-      enable = true;
-      package = pkgs.rofi-wayland;
-      font = "Hack Nerd Font Mono 14";
-    };
     # steam = {
     #   enable = true;
     #   gamescopeSession.enable = true;
     # };
-    # xdg.mimApps.defaultApplications = {
+    # xdg.mimeApps.defaultApplications = {
     # "application/pdf" = [ "zathura.desktop" ];
     #  "image/*" = [ "sxiv.desktop" ];
     #  "video/*" = [ "mpv.desktop" ];
     # };
   };
 
+  services = {
+    network-manager-applet.enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
