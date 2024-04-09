@@ -22,6 +22,12 @@
       enableFishIntegration = true;
     };
 
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
+
     thefuck = {
       enable = true;
       enableFishIntegration = true;
