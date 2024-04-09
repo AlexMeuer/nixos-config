@@ -22,6 +22,7 @@
   imports = [
     ./term
     ./git.nix
+    ./neovim
     ./firefox.nix
     ./waybar
     ./music
