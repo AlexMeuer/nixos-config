@@ -20,7 +20,7 @@
   #   nix-colors.homeManagerModules.default
   # ];
   imports = [
-    ./fish.nix
+    ./term
     ./git.nix
     ./firefox.nix
     ./waybar
@@ -50,18 +50,6 @@
 
     gruvbox-gtk-theme
 
-    neofetch
-    bat
-    lolcat
-    tree
-    fishPlugins.colored-man-pages
-    fishPlugins.fzf-fish
-    fzf
-    fishPlugins.grc
-    grc
-    ranger
-    gnupg
-    ripgrep
     vlc
     mpv
 
@@ -82,27 +70,12 @@
   xdg.portal.config.common.default = "*";
 
   programs = {
-    kitty = {
-      enable = true;
-      theme = "Gruvbox Material Dark Medium";
-      font.name = "Hack Nerd Font Mono";
-      shellIntegration.enableFishIntegration = true;
-      # TODO: kitty config (as own module that I'll then import here)
-    };
     btop = {
       enable = true;
       settings = {
         color_theme = "gruvbox_dark_v2";
         vim_keys = true;
       };
-    };
-    atuin = {
-      enable = true;
-      enableFishIntegration = true;
-    };
-    thefuck = {
-      enable = true;
-      enableFishIntegration = true;
     };
     neovim = {
       enable = true;
@@ -134,9 +107,18 @@
     mako = {
       enable = true;
       font = "Hack Nerd Font Mono 10";
-      textColor = "#FFFFFFFF";
-      borderColor = "#4C7899FF";
-      backgroundColor = "#285577FF";
+      textColor = "#d4be98";
+      borderColor = "#8ec07c";
+      backgroundColor = "#282828";
+      borderRadius = 4;
+      borderSize = 2;
+      extraConfig = ''
+        [urgency=low]
+        border-color=#689d6a
+        [urgency=critical]
+        border-color=#fb4934
+        text-color=#fbf1c7
+      '';
     };
   };
 
@@ -170,9 +152,9 @@
   #
   #  /etc/profiles/per-user/alex/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "nvim";
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

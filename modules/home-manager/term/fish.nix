@@ -1,5 +1,10 @@
 { pkgs, inputs, ... }: {
-  home.packages = [ pkgs.lolcat ];
+  home.packages = with pkgs; [
+    fishPlugins.colored-man-pages
+    fishPlugins.fzf-fish
+    fishPlugins.grc
+    lolcat
+  ];
   programs.fish = {
     enable = true;
     shellAbbrs = {
@@ -15,11 +20,11 @@
     plugins = [
       {
         name = "grc";
-	src = pkgs.fishPlugins.grc.src;
+        src = pkgs.fishPlugins.grc.src;
       }
       {
         name = "colored-man-pages";
-	src = pkgs.fishPlugins.colored-man-pages.src;
+        src = pkgs.fishPlugins.colored-man-pages.src;
       }
       {
         name = "z";
@@ -32,8 +37,8 @@
       }
     ];
     interactiveShellInit = ''
-set -gx GPG_TTY (tty)
-'';
+      set -gx GPG_TTY (tty)
+    '';
     functions = {
       fish_greeting = ''echo "Let's fish!" | ${pkgs.lolcat}/bin/lolcat'';
       fish_prompt = ''set -l last_pipestatus $pipestatus
