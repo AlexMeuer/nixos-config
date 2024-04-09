@@ -24,7 +24,7 @@
     ./git.nix
     ./firefox.nix
     ./waybar
-    ./spotify.nix
+    ./music
     ./discord
   ];
 
@@ -103,24 +103,6 @@
     # };
   };
 
-  services = {
-    mako = {
-      enable = true;
-      font = "Hack Nerd Font Mono 10";
-      textColor = "#d4be98";
-      borderColor = "#8ec07c";
-      backgroundColor = "#282828";
-      borderRadius = 4;
-      borderSize = 2;
-      extraConfig = ''
-        [urgency=low]
-        border-color=#689d6a
-        [urgency=critical]
-        border-color=#fb4934
-        text-color=#fbf1c7
-      '';
-    };
-  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

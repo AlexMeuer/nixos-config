@@ -7,8 +7,7 @@ in
   programs.spicetify =
     {
       enable = true;
-      # theme = spicePkgs.themes.Onepunch;
-      theme = spicePkgs.themes.RetroBlur;
+      theme = spicePkgs.themes.Onepunch;
 
       enabledExtensions = with spicePkgs.extensions; [
         fullAppDisplay
