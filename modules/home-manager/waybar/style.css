@@ -40,7 +40,7 @@ window#waybar {
     padding-right: 10px;
 }
 #clock {
-  margin: 2px 0px 2px 0px;
+  margin: 2px 2px 2px 2px;
   color: @base0D;
   padding-left: 8px;
   padding-right: 8px;
@@ -91,13 +91,15 @@ window#waybar {
 }
 
 #workspaces button.visible {
-  color: @base09;
   background-color: @base01;
+  border: 1px solid;
+  border-color: @base05
 }
 
 #workspaces button.urgent {
-  color: @base08;
-  background-color: @base04
+  color: @base04;
+  border: 1px solid;
+  border-color: @base08;
 }
 
 #custom-left_pad {

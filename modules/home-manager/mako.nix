@@ -2,7 +2,7 @@
   services = {
     mako = {
       enable = true;
-      defaultTimeout = 60;
+      defaultTimeout = 60000;
       width = 600;
       font = "Hack Nerd Font Mono 10";
       textColor = "#d4be98";
