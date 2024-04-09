@@ -26,6 +26,7 @@
     ./waybar
     ./music
     ./discord
+    ./mako.nix
   ];
 
   # colorScheme = nix-colors.colorSchemes.gruvbox;

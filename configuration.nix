@@ -20,6 +20,10 @@
   # boot.loader.grub.useOSProber = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Speed up boot times by not waiting for a few things.
+  systemd.services.systemd-udev-settle.enable = false;
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   networking.hostName = "alex-desktop"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
