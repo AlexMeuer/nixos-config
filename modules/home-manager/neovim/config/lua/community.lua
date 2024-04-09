@@ -21,6 +21,8 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.markdown" },
 
+  { import = "astrocommunity.pack.nix" },
+
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript" },

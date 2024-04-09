@@ -11,6 +11,7 @@
       gitl = "lazygit";
       gits = "git status";
       amend = "git commit --amend";
+      develop = "nix develop --command fish";
     };
     shellAliases = {
       gita = "git add --all";

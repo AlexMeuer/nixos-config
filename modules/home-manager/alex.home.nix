@@ -75,15 +75,8 @@
         vim_keys = true;
       };
     };
-    neovim = {
+    go = {
       enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-      vimdiffAlias = true;
-      withRuby = true;
-      withPython3 = true;
-      withNodeJs = true;
     };
     # steam = {
     #   enable = true;
