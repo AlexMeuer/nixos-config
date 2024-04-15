@@ -11,4 +11,10 @@
     withPython3 = true;
     withNodeJs = true;
   };
+
+  home.packages = with pkgs; [
+    go
+    cargo
+    unzip
+  ];
 }
