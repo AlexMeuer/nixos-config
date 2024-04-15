@@ -24,7 +24,7 @@
 
     direnv = {
       enable = true;
-      enableFishIntegration = true;
+      # enableFishIntegration = true; This reports being set twice if done here.
       nix-direnv.enable = true;
     };
 
