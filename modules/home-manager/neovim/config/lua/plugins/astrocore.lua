@@ -3,6 +3,22 @@
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
 
+local runSpotify = function(args, title)
+  require("plenary.job")
+    :new({
+      command = "spt",
+      args = args,
+      on_exit = function(j, return_val)
+        require("astrocore").notify(
+          table.concat(j.result(j), "\n"),
+          return_val == 0 and vim.log.levels.INFO or vim.log.levels.ERROR,
+          { title = title }
+        )
+      end,
+    })
+    :start()
+end
+
 ---@type LazySpec
 return {
   "AstroNvim/astrocore",
@@ -36,7 +52,7 @@ return {
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
-        blamer_enabled = true,           -- enable git blamer
+        blamer_enabled = true, -- enable git blamer
         blamer_show_in_visual_modes = true,
         blamer_show_in_insert_modes = true,
         blamer_relative_time = true, -- Shows commit date in relative format
@@ -65,21 +81,22 @@ return {
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus
         ["<Leader>b"] = { desc = "Buffers" },
+
         ["<leader>fp"] = { "<cmd>Telescope projects<cr>", desc = "Find Projects" },
         ["<leader>ts"] = {
           -- Assumes that toggle term is available.
-          function() utils.toggle_term_cmd "spt" end,
+          function() require("astrocore").toggle_term_cmd "spt" end,
           desc = "ToggleTerm spotify",
         },
         ["<leader>tn"] = {
           -- Assumes that toggle term is available.
-          function() utils.toggle_term_cmd "nap" end,
+          function() require("astrocore").toggle_term_cmd "nap" end,
           desc = "ToggleTerm Nap",
         },
         ["<leader>m"] = { desc = " Music" },
         ["<leader>mo"] = {
           -- Assumes that toggle term is available.
-          function() utils.toggle_term_cmd "spt" end,
+          function() require("astrocore").toggle_term_cmd "spt" end,
           desc = "ToggleTerm spotify",
         },
         ["<leader>mt"] = {

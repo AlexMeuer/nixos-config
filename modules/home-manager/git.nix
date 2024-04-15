@@ -1,7 +1,7 @@
 { pkgs, input, ... }: {
   programs.git = {
     enable = true;
-    userName = "alexmeuer";
+    userName = "Alex Meuer";
     userEmail = "alex@alexmeuer.com";
     delta.enable = true;
     lfs.enable = true;

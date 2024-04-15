@@ -6,6 +6,7 @@ return {
 
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  { import = "astrocommunity.editing-support.nvim-regexplainer" },
 
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   -- { import = "astrocommunity.editing-support.chatgpt-nvim" },
@@ -21,13 +22,12 @@ return {
   { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.markdown" },
 
-  { import = "astrocommunity.pack.nix" },
-
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.dart" },
+  { import = "astrocommunity.pack.nix" },
 
   { import = "astrocommunity.pack.docker" },
 
